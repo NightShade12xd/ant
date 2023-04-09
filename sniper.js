@@ -15,7 +15,7 @@ const rl = readline.createInterface({
 rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR ACCOUNT TOKEN 31
   rl.question("\x1b[34m server id:\x1b[0m ", (guildId) => {
      rl.question("\x1b[34m url :\x1b[0m ", (vanityUrl) => {
-        rl.question("\x1bx14m webhook \x1b[0m ", (webhookUrl) => {
+        rl.question("\x1bx34m webhook :\x1b[0m ", (webhookUrl) => {
         const headers = {
           "authorization": token,
           "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
@@ -58,7 +58,7 @@ rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR
               console.log('\x1b[36m%s\x1b[0m',`> URL Alındı ${vanityUrl}`);
               const data = {
                 content: `@everyone discord.gg/${vanityUrl} Başarılı xd`,
-                username: "Anthell",
+                username: "anthel & night",
                 avatar_url: "https://i.imgoKzng"
               };      
               request.post({
