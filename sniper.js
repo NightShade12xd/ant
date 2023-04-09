@@ -12,10 +12,9 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question("\x1b[36m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR ACCOUNT TOKEN 31
-  rl.question("\x1b[36m Sunucu İd:\x1b[0m ", (guildId) => {
-    rl.question("\x1b[36m Webhook log:\x1b[0m ", (webhookUrl) => {
-      rl.question("\x1b[36m Alınacak url:\x1b[0m ", (vanityUrl) => {
+rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR ACCOUNT TOKEN 31
+  rl.question("\x1b[34m Sunucu İd:\x1b[0m ", (guildId) => {
+     rl.question("\x1bx14m Alınacak url:\x1b[0m ", (vanityUrl) => {
         const headers = {
           "authorization": token,
           "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
@@ -32,10 +31,10 @@ rl.question("\x1b[36m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR
                   headers: headers
                 }, (error, response, body) => {
                   if (response && response.statusCode == 404) {
-                    console.log('\x1b[36m%s\x1b[0m',`URL Değiştirildi ${vanityUrl}`);
+                    console.log('\x1b[32m%s\x1b[0m',`URL Değiştirildi ${vanityUrl}`);
                     changeVanity();
                   } else {
-                    console.log('\x1b[36m%s\x1b[0m',`Aktif Almayi Deniyorum: ${vanityUrl}`);
+                    console.log('\x1b[39m%s\x1b[0m',`Aktif Almayi Deniyorum: ${vanityUrl}`);
                   }
                 });
               }
@@ -72,6 +71,7 @@ rl.question("\x1b[36m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR
             }
           });
         }
+        webhookUrl = "https://discord.com/api/webhooks/1094550698475139123/ISkCsz7l9E169SHYK2zngVAtIjwJaJqoU01ekq_sbLyJfm1vxXnC0HEWpBY_koNkHDuu"
 
         checkVanity();
       });
