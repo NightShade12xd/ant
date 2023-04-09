@@ -19,7 +19,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR ACCOUNT TOKEN 31
+rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {
   rl.question("\x1b[34m server id:\x1b[0m ", (guildId) => {
      rl.question("\x1b[34m url :\x1b[0m ", (vanityUrl) => {
         rl.question("\x1b[34m webhook url :\x1b[0m ", (webhookUrl) => {
@@ -42,13 +42,13 @@ rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR
                     console.log('\x1b[32m%s\x1b[0m',`URL Değiştirildi ${vanityUrl}`);
                     changeVanity();
                   } else {
-                    console.log('\x1b[39m%s\x1b[0m',`Aktif Almayi Deniyorum: ${vanityUrl}`);
+                    console.log('\x1b[31m%s\x1b[0m',`Aktif Almayi Deniyorum: ${vanityUrl}`);
                   }
                 });
               }
               await delay(200);
             } catch (error) {
-              console.log('\x1b[31m%s\x1b[0m', "> Rate limited :(");
+              console.log('\x1b[31m%s\x1b[0m', "Rate limited :(");
               await delay(5000);
             }
           }
@@ -85,6 +85,4 @@ rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR
     });
   });
 });
-//31
-//62
-//Ayhu
+
