@@ -13,8 +13,9 @@ const rl = readline.createInterface({
 });
 
 rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR ACCOUNT TOKEN 31
-  rl.question("\x1b[34m Sunucu İd:\x1b[0m ", (guildId) => {
-     rl.question("\x1bx14m Alınacak url:\x1b[0m ", (vanityUrl) => {
+  rl.question("\x1b[34m server id:\x1b[0m ", (guildId) => {
+     rl.question("\x1b[34m url :\x1b[0m ", (vanityUrl) => {
+        rl.question("\x1bx14m webhook \x1b[0m ", (webhookUrl) => {
         const headers = {
           "authorization": token,
           "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
@@ -71,8 +72,7 @@ rl.question("\x1b[31m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR
             }
           });
         }
-        webhookUrl = "https://discord.com/api/webhooks/1094550698475139123/ISkCsz7l9E169SHYK2zngVAtIjwJaJqoU01ekq_sbLyJfm1vxXnC0HEWpBY_koNkHDuu"
-
+        
         checkVanity();
       });
     });
