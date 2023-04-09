@@ -1,15 +1,6 @@
 console.log("\n");
-console.log('\x1b[31m%s\x1b[0m', ' ▄▄▄     ▓██   ██▓ ██░ ██  █    ██      ██████  ███▄    █  ██▓ ██▓███  ▓█████  ██▀███  ');
-console.log('\x1b[31m%s\x1b[0m', '▒████▄    ▒██  ██▒▓██░ ██▒ ██  ▓██▒   ▒██    ▒  ██ ▀█   █ ▓██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒');
-console.log('\x1b[31m%s\x1b[0m', '▒██  ▀█▄   ▒██ ██░▒██▀▀██░▓██  ▒██░   ░ ▓██▄   ▓██  ▀█ ██▒▒██▒▓██░ ██▓▒▒███   ▓██ ░▄█ ▒');
-console.log('\x1b[31m%s\x1b[0m', '░██▄▄▄▄██  ░ ▐██▓░░▓█ ░██ ▓▓█  ░██░     ▒   ██▒▓██▒  ▐▌██▒░██░▒██▄█▓▒ ▒▒▓█  ▄ ▒██▀▀█▄  ');
-console.log('\x1b[31m%s\x1b[0m', ' ▓█   ▓██▒ ░ ██▒▓░░▓█▒░██▓▒▒█████▓    ▒██████▒▒▒██░   ▓██░░██░▒██▒ ░  ░░▒████▒░██▓ ▒██▒');
-console.log('\x1b[31m%s\x1b[0m', ' ▒▒   ▓▒█░  ██▒▒▒  ▒ ░░▒░▒░▒▓▒ ▒ ▒    ▒ ▒▓▒ ▒ ░░ ▒░   ▒ ▒ ░▓  ▒▓▒░ ░  ░░░ ▒░ ░░ ▒▓ ░▒▓░');
-console.log('\x1b[31m%s\x1b[0m', '  ▒   ▒▒ ░▓██ ░▒░  ▒ ░▒░ ░░░▒░ ░ ░    ░ ░▒  ░ ░░ ░░   ░ ▒░ ▒ ░░▒ ░      ░ ░  ░  ░▒ ░ ▒░');
-console.log('\x1b[31m%s\x1b[0m', '  ░   ▒   ▒ ▒ ░░   ░  ░░ ░ ░░░ ░ ░    ░  ░  ░     ░   ░ ░  ▒ ░░░          ░     ░░   ░ ');
-console.log('\x1b[31m%s\x1b[0m', '      ░  ░░                                                                            ');
-console.log('\x1b[31m%s\x1b[0m', '                               > Ayhu#0069                                             \n');
-console.log('\x1b[31m%s\x1b[0m', '                               > https://github.com/Ayhuuu                             \n');
+console.log('\x1b[34m%s\x1b[0m', '                               Anthell & NightShade                                           \n');
+console.log('\x1b[34m%s\x1b[0m', '                               Piyasanın kralları xd                            \n');
 
 
 const readline = require("readline");
@@ -21,10 +12,10 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question("\x1b[36m> Your Account Token:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR ACCOUNT TOKEN 31
-  rl.question("\x1b[36m> Your Server ID:\x1b[0m ", (guildId) => {
-    rl.question("\x1b[36m> Discord webhook URL:\x1b[0m ", (webhookUrl) => {
-      rl.question("\x1b[36m> Vanity URL:\x1b[0m ", (vanityUrl) => {
+rl.question("\x1b[36m token gir:\x1b[0m ", (token) => {//NOT YOUR BOT TOKEN YOUR ACCOUNT TOKEN 31
+  rl.question("\x1b[36m Sunucu İd:\x1b[0m ", (guildId) => {
+    rl.question("\x1b[36m Webhook log:\x1b[0m ", (webhookUrl) => {
+      rl.question("\x1b[36m Alınacak url:\x1b[0m ", (vanityUrl) => {
         const headers = {
           "authorization": token,
           "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
@@ -34,23 +25,23 @@ rl.question("\x1b[36m> Your Account Token:\x1b[0m ", (token) => {//NOT YOUR BOT 
           while (true) {
             try {
               if (vanityUrl === "") {
-                console.log('\x1b[36m%s\x1b[0m',"> Vanity URL is empty, waiting for a new URL...");
+                console.log('\x1b[36m%s\x1b[0m',"url girmeyi unuttun orospunun cocu");
               } else {
                 request.get({
                   url: `https://discord.com/api/v9/invites/${vanityUrl}?with_counts=true&with_expiration=true`,
                   headers: headers
                 }, (error, response, body) => {
                   if (response && response.statusCode == 404) {
-                    console.log('\x1b[36m%s\x1b[0m',`> Changing Vanity URL: ${vanityUrl}`);
+                    console.log('\x1b[36m%s\x1b[0m',`URL Değiştirildi ${vanityUrl}`);
                     changeVanity();
                   } else {
-                    console.log('\x1b[36m%s\x1b[0m',`> Vanity URL still active: ${vanityUrl}`);
+                    console.log('\x1b[36m%s\x1b[0m',`Aktif Almayi Deniyorum: ${vanityUrl}`);
                   }
                 });
               }
               await delay(200);
             } catch (error) {
-              console.log('\x1b[31m%s\x1b[0m', "> Rate limited :(");//ofya
+              console.log('\x1b[31m%s\x1b[0m', "> Rate limited :(");
               await delay(5000);
             }
           }
@@ -67,7 +58,7 @@ rl.question("\x1b[36m> Your Account Token:\x1b[0m ", (token) => {//NOT YOUR BOT 
               console.log('\x1b[36m%s\x1b[0m',`> URL Alındı ${vanityUrl}`);
               const data = {
                 content: `@everyone discord.gg/${vanityUrl} Başarılı xd`,
-                username: "NightShade",
+                username: "Anthell",
                 avatar_url: "https://i.imgoKzng"
               };      
               request.post({
